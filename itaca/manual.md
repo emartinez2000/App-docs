@@ -63,7 +63,7 @@ Crea un favorito en tu **posición GPS actual**, sin necesidad de enlace. ITACA 
 
 Abre la lista completa de favoritos del viaje actual. Desde aquí puedes:
 
-- **Filtrar** por nombre, por tipo de lugar (museo, restaurante, iglesia…) y por visto / no visto. El panel de filtros se abre con el icono del embudo, arriba a la derecha.
+- **Filtrar** por nombre, por **tipo de lugar** (museo, restaurante, iglesia…) y por visto / no visto. El panel de filtros se abre con el icono del embudo, arriba a la derecha. Para el tipo, pulsa el control desplegable: se abre un selector donde puedes marcar **una o varias categorías** a la vez, usar **Limpiar** para volver a "Todos" y **OK** para cerrar.
 - **Abrir una ficha** tocándola (ver [sección 4](#4-la-ficha-de-un-favorito)).
 - **Seleccionar varios favoritos** marcando el círculo a la derecha de cada ficha. Con la selección hecha, el menú **"Seleccion"** ofrece:
   - **Borrar**: elimina los favoritos seleccionados.
@@ -91,7 +91,9 @@ En el modo Paseo la pantalla es la **cámara en vivo**, con una barra de botones
 
 ### 3.1 Identificar un lugar: foto + Gemini
 
-El botón **info** (círculo con "i") es el corazón del modo Paseo:
+> **Recomendación**: antes de usar la foto + ✨, abre los **prismáticos**, elige la fuente **Google** en el desplegable de iconos y comprueba si el lugar ya aparece cerca. Si lo encuentras, añádelo con el botón **+**: tendrás nombre, dirección y fotos oficiales de Google en un solo toque. Si más adelante quieres historia o curiosidades, abre la ficha y pulsa el botón **ⓘ** para pedir información a Gemini. Este flujo suele ser más rápido y preciso que identificar únicamente por imagen.
+
+El botón **info** (círculo con "i") es el corazón del modo Paseo cuando no encuentras el lugar en Google o quieres identificarlo directamente por foto:
 
 1. Apunta al monumento, edificio o lugar y pulsa el botón. Se captura una foto.
 2. En la pantalla de revisión puedes:
@@ -119,13 +121,35 @@ Los idiomas de origen y destino se configuran en Ajustes (ver [sección 8](#8-aj
 
 ### 3.3 Qué hay cerca: los prismáticos
 
-El botón de los **prismáticos** abre la lista de lugares cercanos, ordenados por distancia. Arriba eliges el radio: **100 m, 200 m, 500 m, 1 km o ∞** (sin límite). El panel de filtros permite elegir entre tres fuentes:
+El botón de los **prismáticos** abre la lista de lugares cercanos, ordenados por distancia.
 
-- **Favoritos** (corazón): tus favoritos del viaje actual.
-- **Ruta**: los pasos de tu ruta activa, en orden.
-- **Google** ("G"): búsqueda de lugares de Google Places a tu alrededor (restaurantes, museos…), aunque no los tengas guardados. Junto a cada resultado hay un botón **+** para añadirlo a favoritos al instante.
+En la **barra superior** de esa lista tienes, de izquierda a derecha: el botón para cerrar, los controles de **distancia** y **fuente**, y el botón de **filtros**:
 
-También puedes filtrar por nombre, por tipo y por visto / no visto. Tocar una ficha abre su vista de exploración.
+#### Distancia
+
+Un botón muestra el radio activo (**100 m**, **200 m**, **500 m**, **1 km** o **∞**). Al pulsarlo se despliega un menú con todas las opciones; la elegida queda resaltada. El menú se superpone a la lista sin desplazarla. En la fuente **Google**, la opción **∞** no está disponible.
+
+#### Fuente de lugares
+
+Junto a la distancia, un segundo botón muestra el **icono de la fuente activa**. Al pulsarlo se despliegan cuatro opciones:
+
+- **Ruta** (icono morado): los pasos de tu ruta activa, en orden. Si tienes varias rutas, debajo del desplegable aparece un selector para elegir cuál.
+- **Favoritos** (corazón rojo): tus favoritos del viaje actual.
+- **Google** ("G" verde): lugares de Google Places a tu alrededor, aunque no los tengas guardados. Junto a cada resultado hay un botón **+** para añadirlo a favoritos al instante.
+- **Actualizar** (flecha circular): vuelve a cargar los lugares de Google (mantiene la fuente Google).
+
+#### Filtros
+
+El icono del **embudo** (arriba a la derecha) abre el panel de filtros de contenido. Según la fuente activa verás:
+
+- **Favoritos** o **Ruta**: nombre, tipo y visto / no visto.
+- **Google**: solo tipo.
+
+Si alguno de esos filtros no está en su valor por defecto, el botón del embudo se muestra en **naranja** con un pulso suave para avisarte de que la lista está filtrada.
+
+**Filtro por tipo**: en el panel, pulsa el control de **Tipo**. Se abre un selector con todas las categorías Itaca (museo, restaurante, monumento…). Puedes marcar **varias a la vez**; **Limpiar** quita la selección y **OK** cierra el selector. En **Google**, si no eliges ningún tipo, la búsqueda usa **POI** por defecto.
+
+Tocar una ficha abre su vista de exploración.
 
 > Si hay una **visita activa** (ver [sección 5](#5-visitas-y-subitems)), los prismáticos abren directamente la lista de esa visita en lugar de la lista general.
 
@@ -199,7 +223,7 @@ Los subitems quedan guardados para siempre en la ficha del lugar. Es tu **recuer
 Una **ruta** es una secuencia ordenada de favoritos: el itinerario de un día, un paseo temático, etc.
 
 - **Crear o editar**: en modo Preparación, selecciona favoritos en la lista y usa **"Seleccion" → Añadir a ruta**, o entra en **Editar ruta** desde el menú principal. Puedes ponerle nombre, **reordenar los pasos** arrastrando y eliminar la ruta. Una ruta admite hasta 51 pasos.
-- **Seguir la ruta**: en modo Paseo, abre los prismáticos y elige el filtro **Ruta**. Verás los pasos en orden, con su distancia. Combínalo con el botón de Google Maps de cada ficha para navegar de un paso al siguiente.
+- **Seguir la ruta**: en modo Paseo, abre los prismáticos y elige la fuente **Ruta** en el desplegable de iconos. Verás los pasos en orden, con su distancia. Combínalo con el botón de Google Maps de cada ficha para navegar de un paso al siguiente.
 
 > **Consejo**: crea una ruta por día de viaje ("Día 1 — Centro histórico", "Día 2 — Museos") y así cada mañana solo tienes que abrir los prismáticos y seguir el orden.
 
@@ -261,16 +285,17 @@ Tus favoritos, fotos, subitems y enlaces se **sincronizan automáticamente con i
 
 ## 10. Consejos de buen uso
 
-1. **Crea un favorito "Viaje a…" por cada viaje**, con la palabra *Planning* en tus comentarios, y úsalo como cuaderno general: reservas, horarios, teléfonos útiles. Haz lo mismo con un favorito genérico por ciudad o zona. Buscando "Planning" en tus notas los encontrarás siempre al instante.
-2. **Prepara antes, disfruta después.** Las semanas previas al viaje, cada vez que veas un sitio interesante en Google Maps, compártelo a ITACA con una nota. Al llegar, tu mapa de favoritos ya estará hecho y el modo Paseo hará el resto.
-3. **Pide la información de Gemini con antelación** (botón ⓘ de cada ficha) cuando tengas wifi, por ejemplo en el hotel. Así durante el paseo solo tendrás que pulsar el altavoz y escuchar.
-4. **Dos fotos mejor que una** cuando un monumento sea difícil de identificar: captura una vista general y un detalle (una placa, una inscripción) antes de pulsar ✨.
-5. **Pulsa ✨ donde quieras registrar el lugar**: la posición GPS se toma en ese momento, no al hacer la foto. Si haces la foto y te alejas, pregunta antes de irte.
-6. **Usa las visitas en sitios grandes.** En un museo, inicia la visita al entrar: todo lo que fotografíes y preguntes quedará ordenado dentro del museo, no desperdigado por tu lista.
-7. **Marca "Visto"** lo que ya hayas visitado y filtra por "No vistos" en los prismáticos: verás solo lo que te queda por descubrir cerca.
-8. **Descarga las voces Enhanced** de iOS y lleva auriculares: escuchar la historia de un lugar mientras te acercas a él es la mejor forma de usar ITACA.
-9. **Exporta tu viaje al terminarlo** como `.itaca` y guárdalo en Archivos o envíatelo por correo: es tu copia de seguridad y un regalo perfecto para el próximo amigo que visite ese destino.
-10. **Configura los idiomas antes de salir** (Probable language y Translate to) y abre el traductor una vez con wifi para que se descarguen los modelos: después funcionará sin conexión.
+1. **Antes de identificar un lugar por foto, busca con Google.** Abre los prismáticos, elige la fuente **Google** y, si el sitio aparece en la lista, añádelo con **+**. Después, si quieres más contexto, abre la ficha y pide información a Gemini con **ⓘ**. Es más eficiente que empezar por la cámara y ✨.
+2. **Crea un favorito "Viaje a…" por cada viaje**, con la palabra *Planning* en tus comentarios, y úsalo como cuaderno general: reservas, horarios, teléfonos útiles. Haz lo mismo con un favorito genérico por ciudad o zona. Buscando "Planning" en tus notas los encontrarás siempre al instante.
+3. **Prepara antes, disfruta después.** Las semanas previas al viaje, cada vez que veas un sitio interesante en Google Maps, compártelo a ITACA con una nota. Al llegar, tu mapa de favoritos ya estará hecho y el modo Paseo hará el resto.
+4. **Pide la información de Gemini con antelación** (botón ⓘ de cada ficha) cuando tengas wifi, por ejemplo en el hotel. Así durante el paseo solo tendrás que pulsar el altavoz y escuchar.
+5. **Dos fotos mejor que una** cuando un monumento sea difícil de identificar: captura una vista general y un detalle (una placa, una inscripción) antes de pulsar ✨.
+6. **Pulsa ✨ donde quieras registrar el lugar**: la posición GPS se toma en ese momento, no al hacer la foto. Si haces la foto y te alejas, pregunta antes de irte.
+7. **Usa las visitas en sitios grandes.** En un museo, inicia la visita al entrar: todo lo que fotografíes y preguntes quedará ordenado dentro del museo, no desperdigado por tu lista.
+8. **Marca "Visto"** lo que ya hayas visitado y filtra por "No vistos" en los prismáticos (embudo → vistos): verás solo lo que te queda por descubrir cerca.
+9. **Descarga las voces Enhanced** de iOS y lleva auriculares: escuchar la historia de un lugar mientras te acercas a él es la mejor forma de usar ITACA.
+10. **Exporta tu viaje al terminarlo** como `.itaca` y guárdalo en Archivos o envíatelo por correo: es tu copia de seguridad y un regalo perfecto para el próximo amigo que visite ese destino.
+11. **Configura los idiomas antes de salir** (Probable language y Translate to) y abre el traductor una vez con wifi para que se descarguen los modelos: después funcionará sin conexión.
 
 ---
 
