@@ -1,8 +1,10 @@
 # ITACA — Manual de Usuario
 
-*Versión 1.0 — Junio 2026*
+*Revisión documental — 20 de septiembre de 2026; aplicación en pruebas.*
 
-ITACA es una app para **preparar, vivir y recordar tus viajes**: guarda lugares favoritos, identifica monumentos con la cámara, traduce carteles, organiza rutas y visitas, y comparte tus descubrimientos con otros viajeros.
+Este manual refleja las decisiones confirmadas y las limitaciones conocidas. Su fuente se mantiene en el repositorio de ITACA y se publica online en App-docs.
+
+ITACA es una app para **preparar, vivir y recordar tus viajes**: guarda lugares favoritos, identifica monumentos con la cámara, interpreta y traduce con Gemini el texto visible, organiza rutas y visitas, y comparte tus descubrimientos con otros viajeros.
 
 ---
 
@@ -29,11 +31,11 @@ ITACA es una app para **preparar, vivir y recordar tus viajes**: guarda lugares 
 ITACA funciona en dos modos, pensados para dos momentos distintos del viaje:
 
 - **Modo Preparación**: el modo "de escritorio". Aquí añades lugares, organizas tu lista de favoritos, creas rutas e importas o exportas favoritos. Es el modo ideal en casa antes del viaje, o en el hotel planificando el día siguiente.
-- **Modo Paseo**: el modo "de calle". La cámara está siempre lista para identificar un monumento, traducir un cartel o consultar qué tienes cerca. Es el modo que llevarás abierto mientras caminas.
+- **Modo Paseo**: el modo "de calle". La cámara está siempre lista para identificar un monumento o cartel mediante Gemini y consultar qué tienes cerca. Es el modo que llevarás abierto mientras caminas.
 
 Para cambiar de modo usa el botón de la **esquina superior derecha**: en Paseo verás el icono de una persona caminando (te lleva a Preparación) y en Preparación un icono de lápiz con lista (te lleva a Paseo).
 
-En **iPhone** la app arranca en modo Paseo; en **iPad** arranca en modo Preparación. En Mac (app de iPad en Mac) solo está disponible el modo Preparación, ya que el modo Paseo requiere cámara.
+En **iPhone** la app arranca en modo Paseo; en **iPad** arranca en modo Preparación. En Mac (app de iPad en Mac) solo está disponible Preparación, también al regresar de una visita. En iPad se mantienen ambos modos y toda la funcionalidad.
 
 ### El favorito
 
@@ -53,7 +55,7 @@ La pantalla principal del modo Preparación muestra el nombre del viaje actual (
 
 Pega un enlace de Google Maps (largo o corto, del tipo `maps.app.goo.gl/...`) y ITACA lo resuelve automáticamente: obtiene el nombre del lugar, la dirección, las coordenadas, el tipo de lugar y hasta dos fotos de Google. Antes de guardar verás una vista previa donde puedes añadir un **nombre personalizado** y un **comentario**.
 
-> **La forma más rápida**: ni siquiera necesitas copiar y pegar. Desde Google Maps, pulsa **Compartir** en cualquier lugar y elige **ITACA** en la hoja de compartir. Puedes escribir una nota en ese momento, que quedará guardada como comentario del favorito. La próxima vez que abras ITACA, el lugar ya estará creado.
+> **La forma más rápida**: ni siquiera necesitas copiar y pegar. Desde Google Maps, pulsa **Compartir** en cualquier lugar y elige **ITACA** en la hoja de compartir. Puedes escribir una nota en ese momento, que quedará guardada como comentario del favorito. Al abrir ITACA se procesa el enlace y se crea el lugar si la resolución y el guardado tienen éxito.
 
 ### 2.2 Añadir lugar manualmente
 
@@ -91,7 +93,7 @@ En el modo Paseo la pantalla es la **cámara en vivo**, con una barra de botones
 
 ### 3.1 Identificar un lugar: foto + Gemini
 
-> **Recomendación**: antes de usar la foto + ✨, abre los **prismáticos**, elige la fuente **Google** en el desplegable de iconos y comprueba si el lugar ya aparece cerca. Si lo encuentras, añádelo con el botón **+**: tendrás nombre, dirección y fotos oficiales de Google en un solo toque. Si más adelante quieres historia o curiosidades, abre la ficha y pulsa el botón **ⓘ** para pedir información a Gemini. Este flujo suele ser más rápido y preciso que identificar únicamente por imagen.
+> **Recomendación**: antes de usar la foto + ✨, abre los **prismáticos**, elige la fuente **Google** en el desplegable de iconos y comprueba si el lugar ya aparece cerca. La lista se carga con información mínima y una portada. Si lo encuentras, pulsa **+**, confirma tus comentarios y **Añadir**: en ese momento ITACA solicita los detalles y hasta dos fotos completas disponibles antes de guardarlo. Si esa consulta falla, puedes reintentar o aceptar de forma explícita guardar solo los datos básicos y la portada mostrada. Si más adelante quieres historia o curiosidades, abre la ficha y pulsa el botón **ⓘ** para pedir información a Gemini. Este flujo suele ser más rápido y preciso que identificar únicamente por imagen.
 
 El botón **info** (círculo con "i") es el corazón del modo Paseo cuando no encuentras el lugar en Google o quieres identificarlo directamente por foto:
 
@@ -100,28 +102,24 @@ El botón **info** (círculo con "i") es el corazón del modo Paseo cuando no en
    - Pulsar **✨ (chispas)** para preguntar a Gemini directamente.
    - Pulsar **añadir foto** para capturar una **segunda foto** desde otro ángulo (a veces ayuda a Gemini a identificar mejor el lugar).
    - Pulsar **papelera** para descartar y volver a la cámara.
-3. Gemini responde con: un **resumen en una frase**, un **resumen**, una **explicación** detallada y **referencias**. También propone hasta tres **sugerencias de preguntas** para seguir profundizando.
+3. Gemini responde con: un **resumen en una frase**, un **resumen**, una **explicación** detallada y **referencias**. También reconoce el texto visible y, cuando corresponde, incluye su traducción en el apartado **Traducción**. Propone hasta tres **sugerencias de preguntas** para seguir profundizando.
 4. Puedes **escuchar la respuesta** con el botón del altavoz (lectura en voz alta, con controles de pausa, frase anterior/siguiente y volumen). Si llevas AirPods conectados, la lectura empieza automáticamente.
 5. Para preguntar algo más, usa el botón **"¿Quieres saber alguna otra cosa sobre este sitio?"**: puedes continuar la conversación dentro de ITACA, o saltar a las apps de Gemini o ChatGPT con el contexto copiado.
 6. Cuando termines, pulsa **guardar** (bandeja con flecha) para crear el favorito con toda la información, o **papelera** para descartar la sesión.
 
-> **Sobre la ubicación**: ITACA captura tu posición GPS en el momento de pulsar ✨, no al hacer las fotos. Esa misma coordenada se usa al guardar el lugar. Si haces una foto, caminas y luego preguntas, la posición registrada será la del momento de la consulta.
+> **Sobre la ubicación**: ITACA captura tu posición GPS en el momento de pulsar ✨, no al hacer las fotos. Esa coordenada se conserva al guardar, salvo que aceptes incorporar una coincidencia de Google: en ese caso se guardan las coordenadas y dirección del establecimiento. Sin aceptar esa coincidencia, si haces una foto, caminas y luego preguntas, se registra la posición del momento de la consulta.
 
-### 3.2 Traducir un cartel: OCR
+### 3.2 Texto visible y traducción
 
-El botón de la **burbuja con caracteres** captura una foto y reconoce el texto que aparece en ella (carteles, paneles informativos, menús…):
+No existe un botón de traductor ni un OCR independiente. Usa el mismo botón **info** y el mismo flujo de identificación para fotografiar carteles, paneles, menús o cartelas. Gemini reconoce directamente el texto visible en una o dos imágenes y utiliza ese contenido para identificar y explicar el lugar.
 
-- Los bloques de texto detectados se marcan sobre la imagen. **Toca un bloque** para traducirlo (si hay tres bloques o menos, se traducen automáticamente).
-- Puedes **arrastrar un rectángulo** para seleccionar varios bloques a la vez, y **agruparlos** con el botón de agrupar para que se traduzcan como un único texto.
-- Con el texto traducido puedes:
-  - Pulsar **✨** para pedir a Gemini más contexto sobre lo que dice el cartel (combina el texto con la foto).
-  - Pulsar **guardar** para crear un favorito con la foto del cartel y su traducción.
+El idioma probable configurado para el viaje se utiliza únicamente como pista. Gemini debe decidir el idioma a partir de la imagen. Los idiomas incluidos en **Do not translate languages** se conservan tal cual; los demás se traducen al idioma de la aplicación, actualmente español, dentro del apartado **Traducción** de la explicación detallada.
 
-Los idiomas de origen y destino se configuran en Ajustes (ver [sección 8](#8-ajustes)). La traducción funciona **sin conexión** una vez descargados los modelos de idioma.
+Esta función requiere conexión porque forma parte de la consulta a Gemini. Si guardas el resultado, la traducción se conserva como parte normal de la información del favorito o Subitem.
 
 ### 3.3 Qué hay cerca: los prismáticos
 
-El botón de los **prismáticos** abre la lista de lugares cercanos, ordenados por distancia.
+El botón de los **prismáticos** abre lugares cercanos. En Google se ordenan por **distancia andando** cuando está disponible; los resultados sin ese dato se recolocan siguiendo sus predecesores en la respuesta de Google. Los favoritos usan distancia local y las rutas conservan el orden de sus pasos. El radio Google delimita un círculo de búsqueda, no la longitud máxima del recorrido a pie.
 
 En la **barra superior** de esa lista tienes, de izquierda a derecha: el botón para cerrar, los controles de **distancia** y **fuente**, y el botón de **filtros**:
 
@@ -175,7 +173,7 @@ Es la pantalla principal de un favorito. Contiene:
 
 - Nombre, dirección y el badge **Visto / No visto** (tócalo para cambiarlo: así llevas la cuenta de lo que ya has visitado).
 - **Botón Google Maps**: abre el lugar en Google Maps.
-- **Botón info (ⓘ)**: pide a Gemini información sobre el lugar. Si ya tienes información guardada, te preguntará si quieres **borrar la anterior** o **preguntar algo adicional** que se añadirá como ampliación.
+- **Botón info (ⓘ)**: pide a Gemini información sobre el lugar. Si ya tienes información guardada, ofrece **«Reemplazar información»** o **«Preguntar algo adicional»**. Reemplazar cambia la explicación solo cuando guardas la nueva; descartar conserva la anterior. Preguntar añade una ampliación. Tus notas, fotos, enlaces y preparación de visita se conservan en ambos casos. Si falla guardar, el resultado permanece abierto con un aviso y puedes reintentar.
 - **Botón visita (puerta abierta)**: inicia el flujo de visita (ver [sección 5](#5-visitas-y-subitems)).
 - **Botón altavoz**: lee en voz alta la información del lugar. Perfecto para escuchar la historia del sitio mientras caminas hacia él.
 - **Enlaces**: las referencias que devolvió Gemini y los enlaces que añadas tú.
@@ -184,6 +182,8 @@ Es la pantalla principal de un favorito. Contiene:
 ### 4.3 Editar un favorito
 
 Desde el lápiz puedes modificar todos los campos: nombres (Google y personal), dirección, tipos, enlaces, información corta y larga, comentarios y el estado visto/no visto. El menú de foto permite añadir imágenes desde Fotos, desde un archivo, o haciendo una foto, además de cambiar la portada o borrar fotos.
+
+La portada es una instantánea independiente del álbum. Si borras la foto que usaste para crearla, la portada se conserva mientras quede alguna otra foto; al borrar la última foto también se elimina la portada. **Cancelar** descarta tanto los cambios de fotos como los de portada realizados en esa edición.
 
 ---
 
@@ -200,21 +200,25 @@ Un **subitem** es un "favorito hijo": una obra, una sala, una capilla o un rinc�
 1. Abre la ficha del lugar (por ejemplo, el Museo del Prado) y pulsa el botón de la **puerta abierta**.
 2. La primera vez, ITACA pide a Gemini unas **sugerencias de visita**: qué obras o zonas no deberías perderte. Esas sugerencias se guardan y se convierten automáticamente en subitems.
 3. Se abre la **lista de visita**: la ficha del lugar arriba, las sugerencias de Gemini y la lista de subitems.
-4. Pulsa **"Iniciar visita"**. ITACA vuelve a la cámara del modo Paseo, con la visita activa.
+4. Pulsa **"Iniciar visita"**. La visita queda activa. Se cierran las pantallas del flujo y se vuelve a Paseo en iPhone/iPad o Preparación en Mac. Una banda identifica el lugar de la visita activa.
 
 ### 5.3 Durante la visita
 
-Con la visita activa, todo lo que guardes queda **dentro del lugar visitado** como subitem:
+Con la visita activa, los elementos guardados mediante la vista previa quedan **dentro del lugar visitado** como subitems:
 
 - Haz una foto a un cuadro y pregunta a Gemini con ✨: al guardarlo se crea un subitem del museo.
-- Traduce la cartela de una obra con el OCR: lo mismo.
+- Fotografía la cartela de una obra y pregunta a Gemini: el texto y su traducción quedan en el mismo Subitem cuando corresponde.
 - Los **prismáticos** abren la lista de la visita, para repasar las sugerencias y lo que ya has guardado.
+
+Añadir manualmente o pegar un enlace en Preparación también crea un Subitem. **Compartir desde la app Google Maps e importar `.itaca` siguen creando favoritos independientes**, aunque haya visita activa: es el comportamiento previsto.
+
+Las consultas fotográficas a Gemini incluyen nombre y dirección del lugar de la visita. Al consultar un Subitem también se incluye su nombre. Esto ayuda a interpretar la obra o cartela dentro de su museo, pero no garantiza que la identificación sea correcta.
 
 En la barra superior verás el botón de **salir de la visita**. Al pulsarlo (o desde la lista de visita con "Finalizar visita") ITACA te pide confirmación y vuelve al funcionamiento normal.
 
 ### 5.4 Después de la visita
 
-Los subitems quedan guardados para siempre en la ficha del lugar. Es tu **recuerdo estructurado de la visita**: cada obra con su foto, su explicación y tus notas. Los subitems se exploran igual que un favorito (con Gemini, audio y fotos), aunque no pueden enviarse de forma individual ni iniciar visitas propias.
+Los subitems permanecen guardados al finalizar la visita; borrar el lugar padre también los elimina. Es tu **recuerdo estructurado de la visita**: cada obra con su foto, su explicación y tus notas. Los subitems se exploran igual que un favorito (con Gemini, audio y fotos), aunque no pueden enviarse de forma individual ni iniciar visitas propias.
 
 ---
 
@@ -231,7 +235,9 @@ Una **ruta** es una secuencia ordenada de favoritos: el itinerario de un día, u
 
 ## 7. Compartir favoritos: ficheros .itaca
 
-ITACA permite intercambiar favoritos entre dispositivos y usuarios mediante ficheros **`.itaca`**: un paquete que contiene los lugares con todos sus datos, **incluidas las fotos**, los subitems y los enlaces.
+ITACA permite intercambiar favoritos entre dispositivos y usuarios mediante ficheros **`.itaca`**: un paquete para **compartir copias** con fotos, subitems y enlaces. No es una copia de seguridad integral ni restaura identidades o sesiones de visita.
+
+Los Subitems conservan sus nombres, textos, comentarios, Visto, ubicación, datos Google, categoría, fecha, fotos, enlaces y portada. La copia recibe identidades nuevas y no incluye el historial ni la sesión de visita del emisor. Antes de mostrar el contenido, ITACA valida manifiesto, identidades, rutas, tamaños y recursos. Si el paquete está incompleto o alterado, avisa y no guarda una copia parcial.
 
 ### 7.1 Exportar varios favoritos
 
@@ -239,11 +245,11 @@ ITACA permite intercambiar favoritos entre dispositivos y usuarios mediante fich
 2. Marca los lugares que quieras (círculo a la derecha de cada ficha).
 3. Menú **"Seleccion" → Exportar**.
 4. Escribe un comentario opcional (por ejemplo: "Mis imprescindibles de Roma").
-5. Se genera el fichero `.itaca` y se abre la hoja de compartir: envíalo por WhatsApp, AirDrop, correo o guárdalo en Archivos.
+5. En iPhone/iPad se genera el fichero y se abre la hoja de compartir. En Mac se abre un selector para guardar una copia del archivo.
 
 ### 7.2 Enviar un solo favorito
 
-Desliza la ficha hacia la izquierda y pulsa **Enviar** (avión de papel). Mismo proceso, con un único lugar.
+Desliza la ficha hacia la izquierda y pulsa **Enviar** (avión de papel). Mismo proceso, con un único favorito y sus Subitems.
 
 ### 7.3 Importar
 
@@ -253,6 +259,8 @@ Desliza la ficha hacia la izquierda y pulsa **Enviar** (avión de papel). Mismo 
 
 > La importación siempre **crea copias nuevas**: si importas dos veces el mismo fichero tendrás los lugares duplicados. Revisa antes de importar.
 
+Las rutas incluidas también se copian de forma independiente: nunca se mezclan automáticamente con una ruta del mismo nombre que ya tengas en ese viaje. ITACA conserva el orden relativo de los lugares elegidos. Si seleccionas solo parte de los miembros disponibles, la nueva ruta aparece con el sufijo **«(parcial)»** y la confirmación de importación lo avisa. Un favorito que pertenecía a varias rutas mantiene esas pertenencias en las nuevas copias.
+
 ---
 
 ## 8. Ajustes
@@ -261,12 +269,11 @@ Los Ajustes se abren con el **engranaje** de la esquina superior izquierda, en a
 
 ### Parámetros del viaje
 - **Trip name**: el viaje activo. Todos los favoritos nuevos se asignan a este viaje.
-- **Probable language**: el idioma que probablemente encontrarás en los carteles del destino (código ISO, p. ej. `it` para italiano). Es el idioma de origen del traductor.
+- **Probable language**: el idioma que probablemente encontrarás en los textos del destino (código ISO, p. ej. `it` para italiano). Gemini lo usa como pista, pero debe determinar el idioma a partir de la imagen.
 - **Country**: el país del viaje.
 
-### Traducción
-- **Translate to**: tu idioma, al que se traducirán los carteles (p. ej. `es`).
-- **Do not translate languages**: lista de idiomas que no quieres que se traduzcan (por ejemplo, si lees inglés sin problema, añade `en` y el OCR te mostrará esos textos tal cual).
+### Texto en las fotografías
+- **Do not translate languages**: lista de idiomas cuyo texto quieres conservar sin traducir. El resto se traduce al idioma de la aplicación, actualmente español, cuando Gemini identifica una fotografía.
 
 ### Audio
 - **Voces**: elige la voz para la lectura en voz alta en español y en inglés. Para una calidad notablemente mejor, descarga las voces **"Enhanced"** o **"Premium"** en Ajustes de iOS → Accesibilidad → Contenido leído → Voces.
@@ -276,7 +283,7 @@ Los Ajustes se abren con el **engranaje** de la esquina superior izquierda, en a
 
 ## 9. Sincronización con iCloud
 
-Tus favoritos, fotos, subitems y enlaces se **sincronizan automáticamente con iCloud** entre tus dispositivos (iPhone, iPad, Mac) que usen la misma cuenta de Apple. No necesitas hacer nada: añade un lugar en el iPad por la noche y lo tendrás en el iPhone por la mañana.
+ITACA está configurada para **sincronizar favoritos, fotos, subitems y enlaces con iCloud** entre tus dispositivos (iPhone, iPad, Mac) que usen la misma cuenta de Apple. Los cambios pueden tardar en aparecer en otro dispositivo; su funcionamiento efectivo sigue pendiente de verificación en esta versión de pruebas.
 
 - La sincronización requiere sesión iniciada en iCloud. Sin cuenta, ITACA funciona igualmente pero solo en local.
 - Los ficheros `.itaca` son independientes de iCloud: sirven para pasar favoritos **a otras personas** o entre cuentas distintas.
@@ -294,24 +301,24 @@ Tus favoritos, fotos, subitems y enlaces se **sincronizan automáticamente con i
 7. **Usa las visitas en sitios grandes.** En un museo, inicia la visita al entrar: todo lo que fotografíes y preguntes quedará ordenado dentro del museo, no desperdigado por tu lista.
 8. **Marca "Visto"** lo que ya hayas visitado y filtra por "No vistos" en los prismáticos (embudo → vistos): verás solo lo que te queda por descubrir cerca.
 9. **Descarga las voces Enhanced** de iOS y lleva auriculares: escuchar la historia de un lugar mientras te acercas a él es la mejor forma de usar ITACA.
-10. **Exporta tu viaje al terminarlo** como `.itaca` y guárdalo en Archivos o envíatelo por correo: es tu copia de seguridad y un regalo perfecto para el próximo amigo que visite ese destino.
-11. **Configura los idiomas antes de salir** (Probable language y Translate to) y abre el traductor una vez con wifi para que se descarguen los modelos: después funcionará sin conexión.
+10. **Exporta tu viaje al terminarlo** como `.itaca` y guárdalo en Archivos o envíatelo por correo: es una copia para compartir, no una copia de seguridad integral.
+11. **Configura los idiomas antes de salir**: indica el idioma probable del viaje y cuáles no quieres que Gemini traduzca. El reconocimiento y la traducción forman parte de la consulta online a Gemini.
 
 ---
 
 ## 11. Preguntas frecuentes
 
 **¿ITACA funciona sin conexión?**
-Parcialmente. La traducción de carteles funciona sin conexión (una vez descargados los modelos), y tus favoritos con su información y fotos están siempre disponibles. Gemini, la resolución de enlaces de Google Maps y la búsqueda Nearby requieren conexión.
+Parcialmente. Tus favoritos con su información y fotos están disponibles localmente. La identificación y traducción de texto mediante Gemini, la resolución de enlaces de Google Maps y la búsqueda Nearby requieren conexión.
 
-**¿Por qué no encuentro el modo Paseo en mi Mac?**
-El modo Paseo necesita cámara y GPS; en Mac solo está disponible el modo Preparación.
+**¿Qué modo debo usar en Mac?**
+Preparación. El acceso a Paseo está deshabilitado en Mac. Esta limitación no afecta al iPad.
 
 **Compartí un enlace desde Google Maps y no veo el favorito.**
 El favorito se crea al **abrir ITACA** después de compartir. Abre la app y espera unos segundos; necesita conexión para resolver el enlace.
 
 **¿Puedo recuperar un favorito borrado?**
-No hay papelera. Si lo exportaste antes en un `.itaca`, puedes reimportarlo desde ahí.
+No hay papelera. Si lo compartiste antes en un `.itaca`, puedes importar una copia con el contenido que transporta el paquete. Los Subitems conservan sus campos propios y recursos incluidos, pero el paquete no recupera la identidad original, la sesión ni el historial de visita.
 
 **He importado un fichero dos veces y tengo duplicados.**
 Es el comportamiento esperado: la importación siempre crea copias nuevas. Borra los duplicados desde la lista (selección múltiple → Borrar).
@@ -321,3 +328,29 @@ Descarga una voz "Enhanced" o "Premium" en Ajustes de iOS → Accesibilidad → 
 
 **¿Gemini se equivoca a veces?**
 Sí, como toda IA puede cometer errores, especialmente con lugares poco conocidos. Contrasta los datos importantes (horarios, precios) con las referencias que acompañan a la respuesta.
+
+
+## Comportamiento de guardado y límites de la versión de pruebas
+
+- Las preguntas adicionales se guardan como ampliaciones, conservando la respuesta inicial.
+- Guardar espera a que termine Gemini. Si falla el detalle, puedes guardar la información recibida; se muestra un aviso de que estará incompleta.
+- Borrar el lugar de una visita activa finaliza también esa sesión cuando el borrado se guarda correctamente.
+- Solo se exige compatibilidad con el almacén y los paquetes actuales de pruebas; no con versiones anteriores.
+
+Estas instrucciones corresponden a las correcciones del 20 de septiembre de 2026. La sincronización y los recorridos visuales entre dispositivos requieren comprobación en uso.
+
+Los enlaces compartidos desde Google Maps se retiran de la cola únicamente cuando se han guardado. Si hay un fallo, el aviso permite reintentar o dejarlos para la próxima apertura de la app. Guardar desde la vista previa confirma la persistencia antes de volver al inicio del modo actual; si la visita cambió mientras estaba abierta, pide revisar el destino.
+
+Los ajustes de viaje, idiomas y audio son comunes a Paseo y Preparación: cambiar de modo conserva los cambios. El texto no excluido se traduce al idioma de la app, actualmente español. En las fichas, **Reemplazar información** cambia la explicación al guardar; **Preguntar algo adicional** añade una ampliación. Un fallo de guardado mantiene la respuesta abierta para reintentar.
+
+## Guardados, coincidencias y recuperación
+
+En los editores de favoritos y Subitems, **Guardar** confirma juntos los cambios de texto, fotos, portada y enlaces. Hasta entonces son una edición pendiente. **Cancelar** los descarta; no hay cierre deslizando la pantalla. Si falla guardar, se muestra el error y se conserva la edición para reintentar. Las capturas añadidas directamente desde una ficha también ofrecen reintento o descarte explícito si falla su guardado.
+
+Cambiar **Visto**, cambiar de viaje una selección y añadir un resultado Nearby tampoco se muestran como completados si falla la persistencia. El aviso permite reintentar sin duplicar el lugar ni perder la selección o el valor anterior.
+
+Al resolver un enlace de Google Maps, si el candidato está fuera de 500 metros de las coordenadas de referencia, se muestra la distancia aproximada, nombre, dirección y origen. También se pide revisión si faltan coordenadas de referencia. **Aceptar este lugar** permite continuar. **No aceptar; conservar enlace** mantiene el texto pegado o el enlace y su nota en la cola de compartidos para revisarlo después; no crea un favorito con esa coincidencia. La distancia indicada no es una ruta andando. Los candidatos dudosos de una identificación con Gemini vienen desmarcados: puedes conservar la ubicación de consulta o aceptar expresamente los datos Google.
+
+Si falla la creación de la lista de sugerencias de visita, se muestra el error sin dar por preparada la lista. Reintentar vuelve a guardar los hijos y su estado conjuntamente. Un error al leer el padre se distingue de un lugar que ya no existe.
+
+Si ITACA no puede abrir su almacén, muestra el diagnóstico y **Reintentar**. No borra ni sustituye los datos por una base vacía. Un fallo persistente puede necesitar diagnóstico adicional; el botón no repara automáticamente un almacén dañado. La sincronización real entre dispositivos continúa pendiente de validación.
